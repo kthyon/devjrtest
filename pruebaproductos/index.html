@@ -6,45 +6,44 @@
     <meta name="viewport" content="width">
     <link rel="stylesheet" type="text/css" href="public\css\estilos.css">
     <link rel="stylesheet" type="text/css" href="public\css\bootstrap.min.css">
+    <link rel="shortcut icon"  type="image/x-icon" href="public\img\fav.ico">
     
     
-    
-    <title>Document</title>
+    <title>COMPRAS</title>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="#" ><img src="public/img/logo.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            
+                <li class="nav-item">Filtar Por
+                <label for="">
+                <select name="" id="navbarDropdown">
+                <option value="Nombre">Nombre</option>
+                <option value="id">id</option>
+                  
+
+                </select>
+
+              </label>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Filtrar por:
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item">Nombre</a></li>
-                  <li><a class="dropdown-item" href="#">id</a></li>
-                 
-                  <li><a class="dropdown-item" href="#">Categoria</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
+              
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" id="campoBusqueda" aria-label="Search">
-              <button class="btn btn-outline-success" id="buscar" type="">Search</button>
+            
+            <form class="d-flex" action="#">
+              <button class="btn" >&nbsp;🛒</button>&nbsp;&nbsp;
+              <input style="border: 0px;" id="carroV" value="0" disabled="disabled">
+              <button class="btn btn-primary" >comprar</button>&nbsp;&nbsp;
+              
+              <input class="form-control me-2" type="search" placeholder="ID o nombre" id="campoBusqueda" aria-label="Search">
+             
+              <button class="btn btn-outline-success" id="buscar" >Buscar</button>
             </form>
           </div>
         </div>
@@ -61,7 +60,7 @@
         </div>
 
     </div>
-
+    <script src="public/js/jquery-3.2.1.js"></script> 
     <script src="public/js/bootstrap.min.js"></script> 
     <script src="public/js/j.js"></script> 
 </body>

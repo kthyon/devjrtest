@@ -2,9 +2,18 @@ let botonBuscar= document.querySelector("#buscar");
 botonBuscar.addEventListener("click",function(){
     let valor=document.getElementById("campoBusqueda").value;
     let filtro=document.getElementById("navbarDropdown").value;
+if(filtro=="Nombre"){
 
-    alert(filtro);
-    //MostarProductos(valor)
+    MostarProductos(valor,"name")
+
+}else{
+    if(filtro=="id"){
+        MostarProductos(valor,"id")
+
+    }
+}
+    
+ 
 ;})
 
 
@@ -12,12 +21,12 @@ botonBuscar.addEventListener("click",function(){
 
 
 
-function MostarProductos(nombreP){
+function MostarProductos(nombreP,filtro){
 
     if(nombreP==""){
         var url=`https://my-json-server.typicode.com/TASNETWORK/Prueba-DJunior/products`;
     }else{
-        var url=`https://my-json-server.typicode.com/TASNETWORK/Prueba-DJunior/products?name=${nombreP}`;
+        var url=`https://my-json-server.typicode.com/TASNETWORK/Prueba-DJunior/products?${filtro}=${nombreP}`;
     }
 
     
@@ -41,14 +50,14 @@ function MostarProductos(nombreP){
     })
     .then(respuesta => {
         
-    
+    console.log(respuesta)
     var contenido=document.querySelector("#contenido");
     let produ=[];
     
         respuesta.forEach(element => {
             var nuevoValor=element.price;
        //  console.log(nuevoValor.replace(/\./g,''))
-    
+
          
     
           
@@ -74,7 +83,7 @@ function MostarProductos(nombreP){
                     <div class="mt-3 mt-lg-0 ml-lg-3 text-center">
                         <h3 class="mb-0 font-weight-semibold">${element.price}</h3>
                         <div> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                        <div class="text-muted">1985 reviews</div> <button type="button" class="btn btn-warning mt-4 text-white"><i class="icon-cart-add mr-2"></i> Add to cart</button>
+                        <div class="text-muted">1985 reviews</div> <button type="button" class="btn btn-warning mt-4 text-white" id="boton"><i class="icon-cart-add mr-2"></i> Add to cart</button>
                     </div>
                 </div>
             </div>
@@ -97,3 +106,16 @@ function MostarProductos(nombreP){
 
 
 }
+
+MostarProductos("","");
+
+
+$(document).on("click","#boton",function(){
+ 
+  let valor= parseInt( $("#carroV").val());
+
+  $("#carroV").val(valor+1);
+
+
+})
+
